@@ -1,0 +1,409 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="utf-8"> 
+<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1, 
+				shrink-to-fit=no"> 
+
+	<title>Centers for Disease Control and Prevention</title>
+	
+	<link href="css/bootstrap-table.min.css" rel="stylesheet">
+
+	<script src="js/bootstrap-table.min.js"></script>
+	<script src="js/bootstrap-table-locale-all.min.js"></script>
+	<script src="js/bootstrap-table-export.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script> 
+    <script src="js/tableExport.min.js"></script>
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap.min.js"></script> 
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link href="css/bootstrap-table.min.css" rel="stylesheet">
+	<script src="js/jquery.table2excel.min.js"></script>
+	<script src="js/tableExport.min.js"></script>
+	<script src="js/bootstrap-table.min.js"></script>
+	<script src="js/bootstrap-table-filter-control.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css"> 
+	<link href="css/bootstrap2-table.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+
+	<!--link href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table-locale-all.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> 
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+	<link rel="shortcut icon" href="https://www.cdc.gov/TemplatePackage/4.0/assets/imgs/favicon.ico">
+	<link href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css" rel="stylesheet">
+	<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569818907/jquery.table2excel.min.js"></script>
+	<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+	<script src="https://unpkg.com/bootstrap-table@1.18.1/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+		 <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
+
+
+
+
+<style>
+#btnsearch{
+  font-size: 18px;
+  border: 2px solid blue;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  background-color: transparent; /* like this */
+}
+  .select,
+  #locale {
+    width: 100%;
+  }
+  .like {
+    margin-right: 10px;
+  }
+  
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#tabla{
+font-size: 5px; 
+}
+
+td{
+font-size: 10px; 
+}
+
+th{
+font-size: 11px; 
+}
+
+ .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: 1s all;
+            opacity: 1;
+        }
+        .loading.show {
+            opacity: 1;
+        }
+        .loading .spin {
+            border: 3px solid hsla(185, 100%, 62%, 0.2);
+            border-top-color: #3cefff;
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }  
+
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: darkblue;
+  border-style: solid none;
+  border-width: 15px 0;
+  margin: 18px 0;
+}	
+.btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
+.btn-labeled {padding-top: 0;padding-bottom: 0;}
+.btn { margin-bottom:10px; }	
+</style>
+ 
+</head>
+<body>
+<div  class="container"> 
+   <div class="row">
+	   <div class="col">
+		<img width="400" height="60" src="http://ec2-54-173-235-52.compute-1.amazonaws.com/cdclogo.jpg">
+		</div>
+		<div class="col">
+		</div>
+   </div>
+</div>
+	
+<div id="cont1" class="container" style="display: none ">
+<div class="container">
+<hr>
+<div  class="container"> 
+   <div class="row">
+	   <div class="col">
+		<img width="150" height="30" src="img/img1.jpg">
+		</div>
+		<div class="col" style="text-align:right">
+		<img width="150"  height="30" src="img/img2.jpg">
+		</div>
+   </div>
+</div>
+<div class="container">
+<h3 style="text-align:center"><p style="text-align:center;font-family:helvetica;">Survey Question Database</p></h3>
+
+<h6><p style="font-family:helvetica;">Since 1995, CDC has licensed survey data from Porter Novelli Public Services.  This searchable database provides a way for CDC to easily see which questions have been asked on which topic areas over time.  You can search using the text box below or by selecting one of the key topics listed below.</h6>  
+<h6><p style="font-family:helvetica;">If you would like more information about the surveys and how they are conducted, you can visit: <a href="https://styles.porternovelli.com">https://styles.porternovelli.com</a></h6>
+<h6><p style="font-family:helvetica;">If you would like more information about licensing data, please contact Fred Fridinger, DrPH (<a href="">ffridinger@cdc.gov</a>)</h6>
+</p>
+</div>
+</div>
+<div class="row">
+  <div class="container col-18 col-md-12">
+	  <nav class="navbar navbar-light bg-light">
+	  <div class="form-inline center">
+		<input id="searchTxt" class="form-control mr-sm-2" type="input" placeholder="Search" aria-label="Search" style="width: 350px;">
+		<button id="btnsearch" class="btn btn-outline-success my-2 my-sm-0" type="button" onClick="llamaservicio(document.getElementById('searchTxt').value);"><img src="img/lupa.png"/></button>
+
+     	 
+	 </div>
+	</nav>
+   </div>
+</div>
+<div class="row">
+  <div class="col-6">
+   <ul class="nav flex-column">
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Antibiotic resistance');">. Antibiotic resistance</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Arthritis');">. Arthritis</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Birth defects');">. Birth defects</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Breastfeeding');">. Breastfeeding</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Cancer');">. Cancer</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Cardiovascular health');">. Cardiovascular health</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Antibiotic resistance');">. Diabetes</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Diabetes');">. Disability</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Emergency preparedness');">. Emergency preparedness</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Environmental health/Asthma');">. Environmental health/Asthma</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Epilepsy');">. Epilepsy</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Eye health/Contacts');">. Eye health/Contacts</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Genomics/Family history');">. Genomics/Family history</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Global health');">. Global health</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Health aging');">. Health aging</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Health conditions');">. Health conditions</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Health information seeking');">. Health information seeking</a>
+		<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Health visits/Primary care');">. Health visits/Primary care</a>
+    </ul>
+  </div>
+  <div class="col-6">
+	<ul class="nav flex-column">
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Hearing');">. Hearing</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Hiv/aids/Stds');">.	Hiv/aids/Stds</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Immunizations/Vaccinations');">.	Immunizations/Vaccinations</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Immunization/Vaccination');">.	Immunization/Vaccination</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Infectious disease');">.	Infectious disease</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Injury');">.	Injury</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Medication safety');">.	Medication safety</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Nutrition');">.	Nutrition</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Overweight/Obesity');">.	Overweight/Obesity</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Physical activity');">.	Physical activity</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Qualtiy of life/Mental health');">.	Qualtiy of life/Mental health</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Reproductive health/Pregnancy');">.	Reproductive health/Pregnancy</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Smoking/tobacco/Nicotine');">.	Smoking/tobacco/Nicotine</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Travelers' health');">.	Travelers' health</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Urinary/Bladder');">.	Urinary/Bladder</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Vaccination/Immunization');">.	Vaccination/Immunization</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Violence');">.	Violence</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Workplace health/Asthma');">.	Workplace health/Asthma</a>
+	<a class="nav-item nav-link" href="javascript:void(0);" onClick="llamaservicio('Workplace/Occupational health');">.	Workplace/Occupational health</a>
+	</ul>
+  </div>
+</div>
+</div>
+
+
+
+<div id="tabla2" class="container" style="display: none "> 
+ <div id="toolbar">
+  <a id="tabla2"  href="javascript:location.reload()">
+	  <button id="remove" class="btn btn-danger">
+		<i class="fa fa-backward"></i> Back
+	  </button>
+  </a>
+   <button id="export" class="btn btn-sm btn-primary">Export</button>
+</div>
+<table id="tabla" class="table table-striped table-bordered table-sm"  
+		data-show-export="false"
+		data-toggle="tabla"
+		data-toolbar="#toolbar"
+		data-search="true"
+		data-show-refresh="false"
+		data-show-toggle="true"
+		data-show-fullscreen="true"
+		data-show-columns="true"
+		data-show-columns-toggle-all="true"
+		data-detail-view="true"
+		data-click-to-select="true"
+		data-detail-formatter="detailFormatter"
+		data-minimum-count-columns="2"
+		data-show-pagination-switch="false"
+		data-pagination="true"
+		data-id-field="survey"
+		data-page-list="[20, 25, 50, 100, all]"
+		data-page-size="20"
+		data-show-footer="true"
+		data-export-options='{
+         "fileName": "test"
+       }'
+		style="display: none ">		
+	<thead> 	
+		<tr> 		
+			<th data-field="question"> 
+			<span class="text-success"> 
+			   <a style="color: blue">Question 
+			</span> 
+			</th>
+			<th data-field="survey"> 
+			<span class="text-success"> 
+			   <a style="color: blue">Survey 
+			</span> 
+			</th> 
+			<th data-field="timing"> 
+			<span class="text-success"> 
+			   <a style="color: blue">Timing 
+			</span> 
+			</th> 
+			<th data-field="variable"> 
+			<span class="text-success"> 
+			   <a style="color: blue">Variable 
+			</span> 
+			</th> 
+			<th data-field="year"> 
+			<span class="text-success"> 
+			   <a style="color: blue">Year 
+			</span> 
+			</th> 			
+		</tr> 
+		</thead> 
+	</table> 
+</div> 
+<div id="filters-dialog" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title ">Table Filters</h4>
+      </div>
+      <div class="modal-body">
+        <span>Add here filter fields!</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-left">Reset Filters</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div id="loader" class="loading show" style="display:none">
+        <div class="spin"></div>
+</div> 
+
+<script type="text/javascript">
+ 
+ window.onload = inicio;
+	
+	function inicio () { 
+	   $("#cont1").show();
+		//document.getElementById('input1').style.display = 'none';
+	}
+    
+	function llamaservicio (search){
+	 $("#loader").show();
+     //https://gzny5bn3ki.execute-api.us-east-1.amazonaws.com/prototype/query?queried_object=cdcsurvey%20where%20superset%20like%20%27%25VITAMIN%25%27
+      //alert("Mi primer alert" + search.toUpperCase() );
+	  
+	  
+	  var baseurl = "https://gzny5bn3ki.execute-api.us-east-1.amazonaws.com/prototype/query?queried_object=cdcsurvey where superset like ";
+	  var xmlhttp1 =new XMLHttpRequest();
+	  
+	  xmlhttp1.open("GET", baseurl +"'%25"+ search.toUpperCase()+"%25'");
+	  //xmlhttp1.withCredentials = true
+	  xmlhttp1.send();
+	  xmlhttp1.onreadystatechange = function () {
+			if (xmlhttp1.readyState === 4 && xmlhttp1.status === 200) {
+				var mydat = JSON.parse(xmlhttp1.responseText);
+				mydata = mydat.CDCSurvey;
+				
+					 $(document).ready(function () { 
+						$('table').bootstrapTable({ 
+							data: mydata
+						}); 
+
+					});
+					    $("#tabla").bootstrapTable('load', mydata);
+						$("#tabla").show();
+						$("#tabla2").show();        
+                        $("#loader").hide();						
+		                $("#cont1").hide();	
+						
+			 $('#tabla').bootstrapTable({
+				showRefresh: true,
+				customToolbarButtons: [{
+				  name: "grid-filters",
+				  title: "Filters",
+				  icon: "img/buscar24px.png",
+				  callback: onShowFiltersDialog
+				},
+				{
+				  name: "grid-email",
+				  title: "Email",
+				  icon: "glyphicon-envelope",
+				  callback: onShowFiltersDialog
+				},
+				{
+				  name: "grid-print",
+				  title: "Print",
+				  icon: "glyphicon-print",
+				  callback: onShowFiltersDialog
+				}
+				]
+			  });		 
+			
+			};	 
+			
+			
+		}
+	  
+	}
+//table functions
+
+  var $table = $('#tabla');
+$('#export').click(function() {
+     $table.tableExport({
+       type: 'csv',
+       escape: false,
+       exportDataType: 'all',
+       refreshOptions: {
+         exportDataType: 'all'
+       }
+     });
+   });
+
+
+
+
+</script>
+</body>
+</html>
