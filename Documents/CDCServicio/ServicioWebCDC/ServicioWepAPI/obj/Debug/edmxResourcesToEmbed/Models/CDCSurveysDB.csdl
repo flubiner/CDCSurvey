@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CDCSurveyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cdcsurvey">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="variable" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="survey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="year" Type="Int64" />
+    <Property Name="timing" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="key1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="key2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="key3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="client" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="superset" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="CDCSurveyDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cdcsurvey" EntityType="Self.cdcsurvey" />
+  </EntityContainer>
+</Schema>

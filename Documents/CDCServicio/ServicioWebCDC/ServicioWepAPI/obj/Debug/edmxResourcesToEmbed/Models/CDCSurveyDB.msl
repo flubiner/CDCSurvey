@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CDCSurveyDBModelStoreContainer" CdmEntityContainer="CDCSurveyDBEntities">
+    <EntitySetMapping Name="cdcsurvey">
+      <EntityTypeMapping TypeName="CDCSurveyDBModel.cdcsurvey">
+        <MappingFragment StoreEntitySet="cdcsurvey">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="variable" ColumnName="variable" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="survey" ColumnName="survey" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="timing" ColumnName="timing" />
+          <ScalarProperty Name="key1" ColumnName="key1" />
+          <ScalarProperty Name="key2" ColumnName="key2" />
+          <ScalarProperty Name="key3" ColumnName="key3" />
+          <ScalarProperty Name="client" ColumnName="client" />
+          <ScalarProperty Name="superset" ColumnName="superset" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

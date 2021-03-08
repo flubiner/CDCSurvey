@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CDCSurveyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="cdcsurvey">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="variable" Type="ntext" />
+    <Property Name="question" Type="ntext" />
+    <Property Name="survey" Type="ntext" />
+    <Property Name="year" Type="bigint" />
+    <Property Name="timing" Type="ntext" />
+    <Property Name="key1" Type="ntext" />
+    <Property Name="key2" Type="ntext" />
+    <Property Name="key3" Type="ntext" />
+    <Property Name="client" Type="ntext" />
+    <Property Name="superset" Type="ntext" />
+  </EntityType>
+  <EntityContainer Name="CDCSurveyDBModelStoreContainer">
+    <EntitySet Name="cdcsurvey" EntityType="Self.cdcsurvey" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
